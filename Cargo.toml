@@ -1,7 +1,7 @@
 [package]
 
 name = "ndless-freetype"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Coeuvre <coeuvre@gmail.com>", "lights0123 <developer@lights0123.com>"]
 keywords = ["freetype", "font", "glyph"]
 description = "Bindings for FreeType font library for Ndless"
@@ -16,6 +16,6 @@ bitflags = "1.0.4"
 cty = "0.1.5"
 embedded-freetype-sys = "0.1.0"
 ndless-sys = "0.1.3"
-nspire = "0.5.1"
+ndless = "0.5.2"
 cstr_core = "0.1.2"
 failure = { version = "0.1.5", default-features = false }

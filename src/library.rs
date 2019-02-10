@@ -3,7 +3,7 @@ use std::ptr::null_mut;
 
 use cstr_core::CString;
 use cty::{c_long, c_void};
-use nspire::prelude::*;
+use ndless::prelude::*;
 
 use crate::ffi;
 use crate::{Error, Face, FtResult, Stroker};
