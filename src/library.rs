@@ -3,7 +3,8 @@ use std::ptr::null_mut;
 
 use cstr_core::CString;
 use cty::{c_long, c_void};
-use ndless::prelude::*;
+use alloc::string::String;
+use alloc::vec::Vec;
 
 use crate::ffi;
 use crate::{Error, Face, FtResult, Stroker};

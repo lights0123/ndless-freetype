@@ -2,7 +2,8 @@ use crate::{ffi, FtResult, GlyphSlot, Matrix, Vector};
 use alloc::borrow::ToOwned;
 use alloc::rc::Rc;
 use cstr_core::CStr;
-use ndless::prelude::*;
+use alloc::string::String;
+use alloc::vec::Vec;
 use std::fmt;
 
 #[repr(u32)]
