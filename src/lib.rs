@@ -37,7 +37,6 @@
 
 #![deny(missing_copy_implementations)]
 #![no_std]
-#![feature(alloc)]
 extern crate alloc;
 #[macro_use]
 extern crate core as std;

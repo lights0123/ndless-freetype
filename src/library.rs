@@ -125,6 +125,30 @@ impl Library {
 		}
 	}
 
+	/// Similar to `new_memory_face`, but uses statically-available memory
+	pub fn new_static_face(
+		&self,
+		buffer: &'static [u8],
+		face_index: isize,
+	) -> FtResult<Face> {
+		let mut face = null_mut();
+
+		let err = unsafe {
+			ffi::FT_New_Memory_Face(
+				self.raw,
+				buffer.as_ptr(),
+				buffer.len() as ffi::FT_Long,
+				face_index as ffi::FT_Long,
+				&mut face,
+			)
+		};
+		if err == ffi::FT_Err_Ok {
+			Ok(unsafe { Face::from_raw(self.raw, face, None) })
+		} else {
+			Err(err.into())
+		}
+	}
+
 	pub fn set_lcd_filter(&self, lcd_filter: LcdFilter) -> FtResult<()> {
 		let err = unsafe { ffi::FT_Library_SetLcdFilter(self.raw, lcd_filter as u32) };
 		if err == ffi::FT_Err_Ok {
